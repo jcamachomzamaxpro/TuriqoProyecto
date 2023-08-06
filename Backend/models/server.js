@@ -14,6 +14,7 @@ class Server {
         this.eventosPath = '/api/eventos';
         this.reciclajePath = '/api/reciclaje'
         this.userPath = '/api/usuarios';
+        this.authPath = '/api/auth';
 
         // Conexion DB
         this.connectDB();
@@ -44,6 +45,8 @@ class Server {
     }
 
     routes() {
+        this.app.use(this.authPath, require("../routes/auth.routes.js"));
+
         this.app.use(this.productoPath, require("../routes/producto.routes.js"));
         this.app.use(this.userPath, require("../routes/usuario.routes.js"));
         this.app.use(this.eventosPath, require("../routes/evento.routes.js"));
