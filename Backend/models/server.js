@@ -15,6 +15,7 @@ class Server {
         this.reciclajePath = '/api/reciclaje'
         this.userPath = '/api/usuarios';
         this.authPath = '/api/auth';
+        this.searchPath = '/api/search';
 
         // Conexion DB
         this.connectDB();
@@ -51,6 +52,7 @@ class Server {
         this.app.use(this.userPath, require("../routes/usuario.routes.js"));
         this.app.use(this.eventosPath, require("../routes/evento.routes.js"));
         this.app.use(this.reciclajePath, require("../routes/reciclaje.routes.js"));
+        this.app.use(this.searchPath, require("../routes/search.routes.js"));
     }
 
     listen() {
