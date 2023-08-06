@@ -11,7 +11,9 @@ class Server {
         this.port = process.env.PORT;
 
         this.productoPath = '/api/productos';
-        this.userPath = '/api/usuarios'
+        this.eventosPath = '/api/eventos';
+        this.reciclajePath = '/api/reciclaje'
+        this.userPath = '/api/usuarios';
 
         // Conexion DB
         this.connectDB();
@@ -43,7 +45,9 @@ class Server {
 
     routes() {
         this.app.use(this.productoPath, require("../routes/producto.routes.js"));
-        this.app.use(this.userPath, require("../routes/usuario.routes.js"))
+        this.app.use(this.userPath, require("../routes/usuario.routes.js"));
+        this.app.use(this.eventosPath, require("../routes/evento.routes.js"));
+        this.app.use(this.reciclajePath, require("../routes/reciclaje.routes.js"));
     }
 
     listen() {

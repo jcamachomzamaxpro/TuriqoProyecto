@@ -29,7 +29,7 @@ const postProductos = async(req, res = response ) => {
 
     if ( productoDB ) {
         return res.status(400).json({
-            msg: `that cheese ${ productoDB.nombre }, ya existe`
+            msg: `El producto ${ productoDB.nombre }, ya existe`
         });
     }
 
@@ -49,9 +49,32 @@ const postProductos = async(req, res = response ) => {
 }
 
 
+const deleteProductos = async(req, res = response ) => {
+
+    const { id } = req.params;
+    const eraseProducto = await Producto.findByIdAndUpdate( id, { estado: false }, {new: true });
+
+    res.json( eraseProducto );
+} 
+
+
+const putProductos = async( req, res = response ) => {
+
+    const { id } = req.params;
+    const { estado, usuario, ...data } = req.body;
+
+
+    const producto = await Producto.findByIdAndUpdate(id, data, { new: true });
+
+    res.json( producto );
+
+}
+
 
 
 module.exports = {
     getProductos,
-    postProductos
+    postProductos,
+    deleteProductos,
+    putProductos
 }

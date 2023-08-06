@@ -1,15 +1,11 @@
-const { Schema, model } = require("mongoose");
+const {Schema, model} = require("mongoose");
 
-const ProductoSchema = Schema({
+const EventoSchema = Schema({
     imagen: {
         type: String,
         required: true
     },
     nombre: {
-        type: String, 
-        required: true
-    },
-    pais: {
         type: String,
         required: true
     },
@@ -21,27 +17,25 @@ const ProductoSchema = Schema({
         type: String,
         required: true
     },
-    precioPromedio: {
+    calificacion: {
         type: Number,
         required: true
     },
-    precioMaximo: {
+    popularidad: {
         type: Number,
         required: true
     },
-    usuario: {
-        type: Schema.Types.ObjectId,
-        ref: 'Usuario',
+    descripcion: {
+        type: String,
+    },
+    claseEvento: {
+        type: String,
+        required: true
     },
     estado: {
         type: Boolean,
         default: true
     }
-})
+});
 
-ProductoSchema.methods.toJSON = function() {
-    const { __v, state, ...data  } = this.toObject();
-    return data;
-}
-
-module.exports = model('Producto', ProductoSchema, 'productos');
+module.exports = model('Evento', EventoSchema, 'eventos');
