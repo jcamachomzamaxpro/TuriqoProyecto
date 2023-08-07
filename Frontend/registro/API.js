@@ -2,9 +2,9 @@ const url = "http://localhost:4020/api/usuarios/";
 
 export const obtenerUsuarios = async () =>{
     try {
-        const productos = await fetch(url);
-        const datosProducto = await productos.json();
-        return datosProducto
+        const response = await fetch(url);
+        const datosInfo = await response.json();
+        return datosInfo
     } catch (error) {
         console.log(error);
     }
@@ -23,7 +23,7 @@ export const addUsuario = async (data) =>{
         console.log(responseError.msg);
 
 
-        window.location.href = "index.html"
+        //window.location.href = "index.html"
     } catch (error) {
         console.log(error);
     }
