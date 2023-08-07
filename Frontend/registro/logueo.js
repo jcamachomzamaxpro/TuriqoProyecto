@@ -19,7 +19,6 @@ function agregarUsuario() {
     if (validate(datos)) {
         return alert("TOdos los datos son necesarios")
     }
-
     addUsuario(datos);
 
 }

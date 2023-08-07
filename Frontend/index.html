@@ -14,7 +14,7 @@
 
       <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark" data-bs-theme="dark">
         <div class="container-fluid mx-4">
-          <a class="navbar-brand" href="#">
+          <a class="navbar-brand" href="/Frontend/index.html">
             <img src="img/Vector.png" alt="" class="mx-3" height="29px" width="29">
             <img src="img/TURIQO.png" alt="" height="23px">
           </a>
@@ -24,16 +24,16 @@
           <div class="collapse navbar-collapse nav justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#">Productos</a>
+                <a class="nav-link" aria-current="page" href="/Frontend/productos/index.html">Productos</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Cultura</a>
+                <a class="nav-link" href="/Frontend/cultura/index.html">Cultura</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Reciclando</a>
+                <a class="nav-link" href="/Frontend/reciclando/index.html">Reciclando</a>
               </li>
               <li class="nav-item mx-3">
-                <a class="btn btn-primary " href="#" role="button" style="background-color: #FB7A5C; border: 1px solid #FB7A5C; border-radius: 11px; padding: 8px 17px;">Sign Up</a>
+                <a class="btn btn-primary " href="#" role="button" style="background-color: #FB7A5C; border: 1px solid #FB7A5C; border-radius: 11px; padding: 8px 17px;" data-bs-toggle="modal" data-bs-target="#modalRegistrarse">Sign Up</a>
 
 
               </li>
@@ -99,6 +99,71 @@
             </div>
         </section>
       </main>
+
+      
+     
+
+
+<!-- Modal Registro-->
+<div class="modal fade" id="modalRegistrarse" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"  data-bs-theme="dark">
+  <div class="modal-dialog">
+    <div class="modal-content text-light">
+      <div class="w-100 d-flex flex-wrap justify-content-around align-items-center mt-3">
+        <h1 class="modal-title fs-5">Registrarse</h1>
+        <h1 class="modal-title btn fs-5 text-secondary" data-bs-toggle="modal" data-bs-target="#modalLogin">Iniciar Sesion</h1>
+      </div>
+      <div class="modal-body">
+        <form method="post" id="formRegistro">
+          <div class="mb-3">
+            <label for="inputNombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="inputNombre">
+          </div>
+          <div class="mb-3">
+            <label for="inputEmail" class="form-label">Email</label>
+            <input type="email" class="form-control" id="inputEmail">
+          </div>
+          <div class="mb-3">
+            <label for="inputPassword" class="form-label">Password</label>
+            <input type="password" class="form-control" id="inputPassword" aria-describedby="passwordHelp">
+            <div id="passwordHelp" class="form-text">La contraseña debe tener minimo 6 letras</div>
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Registrarse</button>
+        </form>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Modal Login-->
+<div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"  data-bs-theme="dark">
+  <div class="modal-dialog">
+    <div class="modal-content text-light">
+      <div class="w-100 d-flex flex-wrap justify-content-around align-items-center mt-3">
+        <h1 class="modal-title fs-5">Iniciar Sesion</h1>
+        <h1 class="modal-title btn fs-5 text-secondary" data-bs-toggle="modal" data-bs-target="#modalRegistrarse">Registrarse</h1>
+      </div>
+      <div class="modal-body">
+        <form method="post" id="formLogin">
+          <div class="mb-3">
+            <label for="inputEmailLogin" class="form-label">Email</label>
+            <input type="email" class="form-control" id="inputEmailLogin">
+          </div>
+          <div class="mb-3">
+            <label for="inputPassLogin" class="form-label">Password</label>
+            <input type="password" class="form-control" id="inputPassLogin" aria-describedby="passwordHelp2">
+            <div id="passwordHelp2" class="form-text">La contraseña debe tener minimo 6 letras</div>
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Iniciar Sesion</button>
+        </form>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
 
 
 

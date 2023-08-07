@@ -1,6 +1,6 @@
-const url = "http://localhost:4020/api/usuarios";
+const url = "http://localhost:4020/api/eventos/";
 
-export const obtenerUsuarios = async () =>{
+export const obtenerEventos = async () =>{
     try {
         const response = await fetch(url);
         const datosInfo = await response.json();
@@ -11,7 +11,7 @@ export const obtenerUsuarios = async () =>{
     
 }
 
-export const addUsuario = async (data) =>{
+export const addProducto = async (data) =>{
     try {
         const response = await fetch(url,{
             method: "POST",
@@ -23,7 +23,21 @@ export const addUsuario = async (data) =>{
         console.log(responseError.msg);
 
 
-        //window.location.href = "index.html"
+        window.location.href = "index.html"
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+export const borrarProducto = async (id) =>{
+    try {
+        await fetch(`${url}/${id}`,{
+            method: "DELETE",
+            headers: {
+                "Content-Type":"application/json",
+            }
+        });
+        window.location.href = "index.html"
     } catch (error) {
         console.log(error);
     }
