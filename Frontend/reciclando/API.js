@@ -1,6 +1,6 @@
-const url = "http://localhost:4020/api/eventos/";
+const url = "http://localhost:4020/api/reciclaje/";
 
-export const obtenerEventos = async () =>{
+export const obtenerReciclaje = async () =>{
     try {
         const response = await fetch(url);
         const datosInfo = await response.json();
