@@ -16,7 +16,7 @@ async function loadDatos() {
         
        contenedor.innerHTML += `
        <div class="mb-4" style="width: 320px; height: 460px; background-color: #3B3B3B; border-radius: 20px;">
-                        <div class="d-flex flex-wrap justify-content-center align-items-center" style="height: 290px; width: 100%; background-image: linear-gradient(#fb795c00, ${cssColor}), url('../img/reciclando.jpg'); background-position: center; background-size: cover; background-repeat: no-repeat;">
+                        <div class="d-flex flex-wrap justify-content-center align-items-center" style="height: 290px; width: 100%;backdrop-filter: blur(20px); background-image: linear-gradient(#fb795c00, ${cssColor}), url('${imagen}'); background-position: center; background-size: cover; background-repeat: no-repeat;">
                             <img src="../img/Vector.png" alt="" width="50%" height="50%" style="border-top-left-radius: 20px; border-top-right-radius: 20px;">
                         </div>
                         <div class="d-flex flex-wrap p-3">
